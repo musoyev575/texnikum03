@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>1-son Texnikumi | Zamonaviy Ta'lim</title>
+
+    <meta name="description"
+          content="1-son Texnikumi — zamonaviy kasbiy ta'lim, amaliy bilim va kelajak kasbini egallash uchun ishonchli ta'lim maskani.">
+
+    <link rel="icon" type="image/png" href="assets/image/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS alohida faylda -->
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        if (localStorage.getItem("site-theme") === "dark") {
+            document.documentElement.classList.add("dark-mode");
+        }
+    </script>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo" aria-label="1-son Texnikumi bosh sahifa">
+                <img src="assets/image/logo.png"
+                     alt="1-son Texnikumi logotipi"
+                     width="52"
+                     height="52">
+
+                <div class="logo-text">
+                    <strong>1-SON TEXNIKUMI</strong>
+                    <span>ZAMONAVIY TA'LIM</span>
+                </div>
+            </a>
+
+            <!-- NAVIGATION -->
+            <div class="navigation" id="mainNavigation">
+                <a href="index.html" class="nav-link active">Bosh sahifa</a>
+                <a href="pages/about.html" class="nav-link">Biz haqimizda</a>
+                <a href="pages/courses.html" class="nav-link">Ta'lim</a>
+                <a href="pages/news.html" class="nav-link">Yangiliklar</a>
+                <a href="pages/gallery.html" class="nav-link">Galereya</a>
+                <a href="pages/contact.html" class="nav-link">Aloqa</a>
+            </div>
+
+            <!-- HEADER ACTIONS -->
+            <div class="header-actions">
+
+                <!-- YANGI: KIRISH TUGMASI -->
+                <a href="pages/admin.html" class="login-button">
+                    Kirish
+                </a>
+
+                <a href="pages/portal.html" class="student-login">
+                    O'quvchi portali
+                </a>
+
+                <div class="site-tools">
+
+                    <!-- QIDIRUV -->
+                    <button type="button"
+                            class="tool-button search-button"
+                            id="searchButton"
+                            aria-label="Qidiruvni ochish">
+                        <span class="tool-button-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="11" cy="11" r="7.5"></circle>
+                                <line x1="16.5" y1="16.5" x2="21.5" y2="21.5"></line>
+                            </svg>
+                        </span>
+                        <span class="tool-button-text">Qidiruv</span>
+                    </button>
+
+                    <!-- REJIM (QUYOSH VA OY) -->
+                    <button type="button"
+                            class="tool-button theme-button"
+                            id="themeButton"
+                            aria-label="Tungi rejimga o'tish"
+                            title="Mavzuni almashtirish">
+                        <span class="tool-button-icon theme-icon-wrap">
+                            <!-- Oy (Moon icon) - kunduzgi rejimda ko'rinadi -->
+                            <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                            <!-- Quyosh (Sun icon) - tungi rejimda ko'rinadi -->
+                            <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </span>
+                        <span class="tool-button-text" id="themeButtonText">Tungi</span>
+                    </button>
+
+                    <!-- MENYU -->
+                    <button type="button"
+                            class="tool-button menu-button"
+                            id="menuButton"
+                            aria-label="Menyuni ochish"
+                            aria-controls="mainNavigation"
+                            aria-expanded="false">
+                        <span class="menu-line"></span>
+                        <span class="menu-line"></span>
+                        <span class="menu-line"></span>
+                    </button>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- QIDIRUV -->
+        <div class="search-box" id="searchBox">
+            <input type="search"
+                   id="siteSearch"
+                   placeholder="Saytdan qidiring..."
+                   aria-label="Saytdan qidirish">
+        </div>
+    </div>
+</header>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-grid"></div>
+    <div class="hero-circle circle-one"></div>
+    <div class="hero-circle circle-two"></div>
+
+    <div class="container">
+        <div class="hero-content">
+
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Qabul jarayoni davom etmoqda
+                </div>
+
+                <h1>
+                    Kelajakni
+                    <span>biz bilan quring.</span>
+                </h1>
+
+                <p>
+                    1-son Texnikumi — zamonaviy kasbiy ta'lim,
+                    amaliy bilim va kelajak kasbini egallash
+                    uchun ishonchli ta'lim maskani.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="pages/courses.html" class="btn btn-primary">
+                        Ta'lim yo'nalishlari
+                    </a>
+
+                    <a href="pages/about.html" class="btn btn-secondary">
+                        Batafsil ma'lumot
+                    </a>
+                </div>
+
+                <div class="hero-info">
+                    <div class="hero-info-item">
+                        <strong>22+</strong>
+                        <span>Yillik tajriba</span>
+                    </div>
+
+                    <div class="hero-info-line"></div>
+
+                    <div class="hero-info-item">
+                        <strong>2000+</strong>
+                        <span>Bitiruvchilar</span>
+                    </div>
+
+                    <div class="hero-info-line"></div>
+
+                    <div class="hero-info-item">
+                        <strong>15+</strong>
+                        <span>Ta'lim yo'nalishi</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-image-card" id="heroSliderCard">
+                    <div class="hero-slider-track" id="heroSliderTrack">
+                        <div class="hero-slide active">
+                            <img src="assets/image/texnikum.jpg" alt="1-son Texnikumi bosh binosi" fetchpriority="high">
+                            <div class="hero-slide-caption">1-son Texnikumi bosh binosi</div>
+                        </div>
+                        <div class="hero-slide">
+                            <img src="assets/image/zal2.jpg" alt="Texnikum ichki foye va zali" loading="lazy">
+                            <div class="hero-slide-caption">Zamonaviy ichki ko'rinish va foye</div>
+                        </div>
+                        <div class="hero-slide">
+                            <img src="assets/image/yangiuquvyili.jpg" alt="Yangi o'quv yili marosimi" loading="lazy">
+                            <div class="hero-slide-caption">Yangi o'quv yili tantanalari</div>
+                        </div>
+                        <div class="hero-slide">
+                            <img src="assets/image/sinf.jpg" alt="Zamonaviy axborot texnologiyalari xonasi" loading="lazy">
+                            <div class="hero-slide-caption">Axborot texnologiyalari va IT sinfi</div>
+                        </div>
+                        <div class="hero-slide">
+                            <img src="assets/image/tikuvchi.jpg" alt="Kasbiy amaliy mashg'ulotlar" loading="lazy">
+                            <div class="hero-slide-caption">100% amaliy kasb-hunar ta'limi</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-image-overlay"></div>
+
+                    <!-- Slider Navigatsiyasi -->
+                    <button type="button" class="hero-slider-nav prev" id="sliderPrevBtn" aria-label="Oldingi rasm">‹</button>
+                    <button type="button" class="hero-slider-nav next" id="sliderNextBtn" aria-label="Keyingi rasm">›</button>
+
+                    <!-- Slider Nuqtalari -->
+                    <div class="hero-slider-dots" id="heroSliderDots">
+                        <button type="button" class="slider-dot active" data-slide="0" aria-label="1-rasm"></button>
+                        <button type="button" class="slider-dot" data-slide="1" aria-label="2-rasm"></button>
+                        <button type="button" class="slider-dot" data-slide="2" aria-label="3-rasm"></button>
+                        <button type="button" class="slider-dot" data-slide="3" aria-label="4-rasm"></button>
+                        <button type="button" class="slider-dot" data-slide="4" aria-label="5-rasm"></button>
+                    </div>
+                </div>
+
+                <div class="floating-card floating-card-top">
+                    <div>
+                        <strong>2000+</strong>
+                        <span>Muvaffaqiyatli bitiruvchi</span>
+                    </div>
+                </div>
+
+                <div class="floating-card floating-card-bottom">
+                    <div>
+                        <strong>100%</strong>
+                        <span>Amaliy ta'lim</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- STATISTICS -->
+<section class="statistics">
+    <div class="container">
+        <div class="statistics-grid">
+
+            <a href="pages/students.html" class="stat-card">
+                <div class="stat-content">
+                    <strong data-counter="2000">0</strong>
+                    <span>Faol o'quvchilar</span>
+                </div>
+            </a>
+
+            <a href="pages/courses.html" class="stat-card">
+                <div class="stat-content">
+                    <strong data-counter="15">0</strong>
+                    <span>Ta'lim yo'nalishlari</span>
+                </div>
+            </a>
+
+            <a href="pages/teachers.html" class="stat-card">
+                <div class="stat-content">
+                    <strong data-counter="40">0</strong>
+                    <span>Malakali o'qituvchilar</span>
+                </div>
+            </a>
+
+            <div class="stat-card">
+                <div class="stat-content">
+                    <strong data-counter="22">0</strong>
+                    <span>Yillik tajriba</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+    <div class="container">
+        <div class="about-grid">
+
+            <div class="about-image">
+                <img src="assets/image/zal2.jpg"
+                     alt="1-son Texnikumi ichki ko'rinishi"
+                     loading="lazy">
+
+                <div class="experience-card">
+                    <strong>22+</strong>
+                    <span>Yillik<br>tajriba</span>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="section-label">Biz haqimizda</div>
+
+                <h2>
+                    Bilimdan
+                    <span>kasbgacha.</span>
+                </h2>
+
+                <p>
+                    1-son Texnikumi zamonaviy ta'lim standartlari
+                    asosida malakali va raqobatbardosh mutaxassislar
+                    tayyorlashga ixtisoslashgan ta'lim muassasasidir.
+                </p>
+
+                <p>
+                    Biz o'quvchilarga nazariy bilim bilan bir qatorda
+                    amaliy ko'nikmalarni ham berib, ularni mustaqil
+                    hayot va mehnat bozoriga tayyorlaymiz.
+                </p>
+
+                <div class="about-features">
+                    <div class="feature"><span class="feature-icon">✓</span> Zamonaviy o'quv dasturlari</div>
+                    <div class="feature"><span class="feature-icon">✓</span> Malakali pedagoglar</div>
+                    <div class="feature"><span class="feature-icon">✓</span> Amaliy mashg'ulotlar</div>
+                    <div class="feature"><span class="feature-icon">✓</span> Zamonaviy laboratoriyalar</div>
+                </div>
+
+                <a href="pages/about.html" class="text-button">
+                    Batafsil ma'lumot
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section education" id="education">
+    <div class="container">
+
+        <div class="section-heading center">
+            <div class="section-label">Ta'lim yo'nalishlari</div>
+
+            <h2>
+                O'zingizga mos
+                <span>kasbni tanlang.</span>
+            </h2>
+
+            <p>
+                Zamonaviy mehnat bozori talablariga mos
+                ta'lim yo'nalishlari va amaliy mashg'ulotlar.
+            </p>
+        </div>
+
+        <div class="education-grid" id="homeCourseGrid">
+
+            <article class="education-card">
+                <span class="education-number">01</span>
+                <div class="education-icon">IT</div>
+                <h3>Axborot texnologiyalari</h3>
+                <p>Dasturlash, kompyuter texnologiyalari, web-dasturlash va zamonaviy IT ko'nikmalar.</p>
+                <a href="pages/courses.html">Batafsil</a>
+            </article>
+
+            <article class="education-card">
+                <span class="education-number">02</span>
+                <div class="education-icon">TK</div>
+                <h3>Tikuvchilik</h3>
+                <p>Kiyim-kechak tikish, bichish, tikuv mashinalaridan foydalanish va zamonaviy tikuvchilik texnologiyalari.</p>
+                <a href="pages/courses.html">Batafsil</a>
+            </article>
+
+            <article class="education-card">
+                <span class="education-number">03</span>
+                <div class="education-icon">OS</div>
+                <h3>Oshpazlik</h3>
+                <p>Milliy va zamonaviy taomlar tayyorlash, oziq-ovqat mahsulotlariga ishlov berish va oshpazlik texnologiyalari.</p>
+                <a href="pages/courses.html">Batafsil</a>
+            </article>
+
+            <article class="education-card">
+                <span class="education-number">04</span>
+                <div class="education-icon">AG</div>
+                <h3>Agrodrom aperatori</h3>
+                <p>Qishloq xo'jaligi texnologiyalari, ekinlarni yetishtirish, agrotexnika jarayonlari va zamonaviy dehqonchilik usullari.</p>
+                <a href="pages/courses.html">Batafsil</a>
+            </article>
+
+            <article class="education-card">
+                <span class="education-number">05</span>
+                <div class="education-icon">TR</div>
+                <h3>Tarbiyachi</h3>
+                <p>Bolalarni tarbiyalash, ularning rivojlanishini qo'llab-quvvatlash, ta'lim-tarbiya jarayonlarini tashkil etish va pedagogik ko'nikmalar.</p>
+                <a href="pages/courses.html">Batafsil</a>
+            </article>
+
+            <article class="education-card">
+                <span class="education-number">06</span>
+                <div class="education-icon">KB</div>
+                <h3>Kitobxonachi</h3>
+                <p>Kitob va axborot resurslarini tartibga solish, kitobxonlarga xizmat ko'rsatish, elektron kataloglar bilan ishlash va kutubxona faoliyati.</p>
+                <a href="pages/courses.html">Batafsil</a>
+            </article>
+
+        </div>
+
+        <div class="center-button">
+            <a href="pages/courses.html" class="btn btn-primary">Barcha yo'nalishlar</a>
+        </div>
+    </div>
+</section>
+
+<!-- ADMISSION -->
+<section class="admission-cta">
+    <div class="container">
+        <div class="admission-content">
+
+            <div>
+                <div class="section-label light">Qabul</div>
+
+                <h2>
+                    Kelajagingizni
+                    <span>bugun boshlang.</span>
+                </h2>
+
+                <p>
+                    1-son Texnikumida o'qish uchun ariza
+                    topshiring va o'zingizga mos kasbni tanlang.
+                </p>
+            </div>
+
+            <div class="admission-actions">
+                <a href="pages/contact.html" class="btn btn-white">Ariza topshirish</a>
+                <a href="tel:+998997891060" class="btn btn-outline-white">Bog'lanish</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- NEWS -->
+<section class="section news" id="news">
+    <div class="container">
+
+        <div class="section-heading">
+            <div class="section-label">Yangiliklar</div>
+
+            <h2>
+                Texnikum
+                <span>hayotidan.</span>
+            </h2>
+
+            <p>
+                So'nggi yangiliklar, tadbirlar va texnikum
+                hayotidagi muhim voqealar.
+            </p>
+        </div>
+
+        <div class="news-grid" id="homeNewsGrid">
+
+            <article class="news-card">
+                <div class="news-image">
+                    <img src="assets/image/zal.jpg" alt="Texnikum tadbiri" loading="lazy">
+                    <span class="news-category">TEXNIKUM</span>
+                </div>
+                <div class="news-body">
+                    <time datetime="2026-09-01">1 Sentyabr, 2026</time>
+                    <h3>Texnikumda yangi o'quv yili uchun tayyorgarlik</h3>
+                    <p>O'quvchilar uchun yangi o'quv yiliga sinfxonalar tayyorlandi.</p>
+                    <a href="pages/news.html">Batafsil</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-image">
+                    <img src="assets/image/yangiuquvyili.jpg" alt="Yangi o'quv yili tadbiri" loading="lazy">
+                    <span class="news-category">TADBIR</span>
+                </div>
+                <div class="news-body">
+                    <time datetime="2026-09-02">2 Sentyabr, 2026</time>
+                    <h3>Texnikumda yangi o'quv yili uchun o'tkazilgan tadbir</h3>
+                    <p>O'quvchilar uchun yangi o'quv yiliga bag'ishlangan tadbir o'tkazildi.</p>
+                    <a href="pages/news.html">Batafsil</a>
+                </div>
+            </article>
+
+            <article class="news-card">
+                <div class="news-image">
+                    <img src="assets/image/tikuvchi.jpg" alt="Amaliy mashg'ulot" loading="lazy">
+                    <span class="news-category">TEXNIKA</span>
+                </div>
+                <div class="news-body">
+                    <time datetime="2026-09-07">7 Sentyabr, 2026</time>
+                    <h3>O'quvchilar o'rtasida kasbiy tanlov</h3>
+                    <p>O'quvchilar zamonaviy jihozlar yordamida amaliy ko'nikmalarini oshirmoqda.</p>
+                    <a href="pages/news.html">Batafsil</a>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="center-button">
+            <a href="pages/news.html" class="btn btn-primary">Barcha yangiliklar</a>
+        </div>
+    </div>
+</section>
+
+<!-- STUDENT PORTAL -->
+<section class="section portal" id="portal">
+    <div class="container">
+
+        <div class="portal-wrapper">
+
+            <div class="portal-content">
+                <div class="section-label light">O'quvchi portali</div>
+
+                <h2>
+                    Ta'limingizni
+                    <span>onlayn boshqaring.</span>
+                </h2>
+
+                <p>
+                    O'quvchi portali orqali dars jadvali,
+                    baholar, davomat va boshqa muhim
+                    ma'lumotlarni kuzatib boring.
+                </p>
+
+                <ul class="portal-list">
+                    <li><span>✓</span> Dars jadvali</li>
+                    <li><span>✓</span> Baholar</li>
+                    <li><span>✓</span> Davomat</li>
+                    <li><span>✓</span> E'lonlar</li>
+                </ul>
+
+                <div class="portal-buttons">
+                    <a href="pages/login.html" class="btn btn-primary">
+                        Kirish
+                    </a>
+
+                    <a href="pages/portal.html" class="btn btn-secondary">
+                        Portal
+                    </a>
+                </div>
+            </div>
+
+            <div class="portal-dashboard">
+                <div class="dashboard-top">
+                    <span>O'quvchi portali</span>
+                    <span class="online">● Online</span>
+                </div>
+
+                <div class="dashboard-user">
+                    <div class="user-avatar">U</div>
+                    <div>
+                        <strong>O'quvchi profili</strong>
+                        <span>1-son Texnikumi</span>
+                    </div>
+                </div>
+
+                <div class="dashboard-stats">
+                    <div><strong>95%</strong><span>Davomat</span></div>
+                    <div><strong>4.8</strong><span>O'rtacha baho</span></div>
+                    <div><strong>12</strong><span>Fanlar</span></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section gallery" id="gallery">
+    <div class="container">
+
+        <div class="section-heading center">
+            <div class="section-label">Galereya</div>
+
+            <h2>
+                Bizning
+                <span>hayotimiz.</span>
+            </h2>
+
+            <p>
+                Texnikumdagi ta'lim, tadbirlar va kundalik
+                hayotdan lavhalar.
+            </p>
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item gallery-large">
+                <img src="assets/image/texnikum.jpg" alt="Texnikum binosi" loading="lazy">
+                <div class="gallery-overlay">Texnikum</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/image/madaniyat.jpg" alt="O'quvchilar" loading="lazy">
+                <div class="gallery-overlay">O'quvchilar</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/image/tikuvchi.jpg" alt="Amaliy mashg'ulot" loading="lazy">
+                <div class="gallery-overlay">Amaliy mashg'ulot</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/image/texnikumbog.jpg" alt="Texnikum bog'i" loading="lazy">
+                <div class="gallery-overlay">Texnikum bog'i</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/image/zal.jpg" alt="Texnikum zali" loading="lazy">
+                <div class="gallery-overlay">Texnikum zali</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/image/zal2.jpg" alt="Texnikum ichki ko'rinishi" loading="lazy">
+                <div class="gallery-overlay">Ichki ko'rinish</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/image/yangiuquvyili.jpg" alt="Yangi o'quv yili" loading="lazy">
+                <div class="gallery-overlay">Yangi o'quv yili</div>
+            </div>
+
+        </div>
+
+        <p class="no-results" id="noResults">Qidiruv bo'yicha ma'lumot topilmadi.</p>
+
+        <div class="center-button">
+            <a href="pages/gallery.html" class="btn btn-primary">Barcha rasmlar</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+                <div class="section-label">Aloqa</div>
+
+                <h2>
+                    Biz bilan
+                    <span>bog'laning.</span>
+                </h2>
+
+                <p>
+                    Savollaringiz bormi? Biz bilan bog'laning.
+                    Mutaxassislarimiz sizga kerakli ma'lumotlarni taqdim etadi.
+                </p>
+
+                <div class="contact-list">
+
+                    <div class="contact-item">
+                        <div class="contact-icon">1</div>
+                        <div>
+                            <strong>Manzil</strong>
+                            <span>Sux tumani Oftobru MFY</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">2</div>
+                        <div>
+                            <strong>Telefon</strong>
+                            <a href="tel:+998997891060">+998 99 789 10 60</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">3</div>
+                        <div>
+                            <strong>Email</strong>
+                            <a href="mailto:info@texnikumsux.uz">info@texnikumsux.uz</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">4</div>
+                        <div>
+                            <strong>Ish vaqti</strong>
+                            <span>Dushanba — Shanba, 08:00 — 18:00</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <form class="contact-form" id="contactForm">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Ismingiz</label>
+                            <input type="text" id="name" name="name"
+                                   placeholder="Ismingizni kiriting"
+                                   autocomplete="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone"
+                                   placeholder="+998 90 123 45 67"
+                                   autocomplete="tel" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="example@gmail.com"
+                               autocomplete="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Mavzu</label>
+                        <input type="text" id="subject" name="subject"
+                               placeholder="Xabar mavzusi">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Xabar</label>
+                        <textarea id="message" name="message"
+                                  placeholder="Xabaringizni yozing..."
+                                  rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Xabar yuborish
+                    </button>
+
+                    <p id="formMessage" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="assets/image/logo.png"
+                         alt="1-son Texnikumi logotipi"
+                         width="52"
+                         height="52">
+
+                    <div class="logo-text">
+                        <strong>1-SON TEXNIKUMI</strong>
+                        <span>ZAMONAVIY TA'LIM</span>
+                    </div>
+                </a>
+
+                <p>
+                    Kelajak uchun zamonaviy bilim,
+                    amaliy ko'nikma va mustahkam kasbiy tayyorgarlik.
+                </p>
+
+                <div class="social-links">
+                    <a href="https://t.me/suxpedagogikatexnikumi" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    <a href="https://www.instagram.com/1_sonli_texnikum?stkn=aGxwdDExN3F5OG91&utm_source=qr"
+                       target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.facebook.com/groups/795700304524729/?ref=share"
+                       target="_blank" rel="noopener noreferrer">Facebook</a>
+                    
+                </div>
+            </div>
+
+            
+
+            <!-- 2-ustun: Davlat saytlari -->
+    <div class="footer-column">
+        <h3>Foydali manbalar</h3>
+        <a href="https://edu.uz" target="_blank" rel="noopener">Oliy ta'lim va innovatsiyalar vazirligi</a>
+        <a href="https://my.gov.uz" target="_blank" rel="noopener">My.gov.uz</a>
+        <a href="https://uzbmb.uz" target="_blank" rel="noopener">Bilim va malakalarni baholash agentligi</a>
+        <a href="https://mehnat.uz" target="_blank" rel="noopener">Kambag'allikni qisqartirish va bandlik vazirligi</a>
+        <a href="https://my.gov.uz/uz/login?redirect=/service/get/761&tab=0" target="_blank" rel="noopener">Oʻqish joyidan maʼlumotnoma</a>
+    </div>
+
+    <!-- 3-ustun: Tezkor havolalar -->
+    <div class="footer-column">
+        <h3>Tezkor havolalar</h3>
+        <a href="pages/register.html">Abituriyentlarga (Qabul)</a>
+        <a href="pages/courses.html">Ta'lim yo'nalishlari</a>
+        <a href="pages/portal.html">Dars jadvali va portal</a>
+        <a href="pages/news.html">Yangiliklar va tadbirlar</a>
+    </div>
+
+            <div class="footer-column">
+                <h3>Bog'lanish</h3>
+                <p>Sux tumani Oftobru MFY</p>
+                <p>Dushanba — Shanba</p>
+                <p>08:00 — 16:00</p>
+
+                <a href="tel:+998997891060" class="footer-contact">+998 99 789 10 60</a>
+                <a href="mailto:info@texnikumsux.uz" class="footer-contact">info@texnikumsux.uz</a>
+
+               
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="currentYear">2026</span> 1-son Texnikumi.
+                Barcha huquqlar himoyalangan.
+            </p>
+
+            <div>
+                
+                DASTURCHI:
+                 <a href="https://t.me/Musoev575"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="footer-contact">
+                    MUSOEV BIJANBEK XURSHEDJONZODA
+                </a>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<!-- GALLERY LIGHTBOX -->
+<div class="gallery-lightbox" id="galleryLightbox"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Rasm ko'rish oynasi">
+
+    <button type="button"
+            class="lightbox-close"
+            id="lightboxClose"
+            aria-label="Yopish">×</button>
+
+    <img id="lightboxImage" src="" alt="">
+</div>
+
+<!-- FLOATING QUICK CONTACT WIDGET -->
+<div class="quick-contact-widget" id="quickContactWidget">
+    <div class="quick-contact-menu" id="quickContactMenu">
+        <div class="quick-contact-header">
+            <strong>Savolingiz bormi?</strong>
+            <span>Biz bilan tezkor bog'laning</span>
+        </div>
+        <a href="https://t.me/Musoev575" target="_blank" rel="noopener noreferrer" class="quick-contact-item telegram">
+            <span class="quick-item-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.05-.2-.07-.06-.17-.04-.25-.02-.11.02-1.93 1.23-5.46 3.62-.52.35-.99.53-1.41.52-.46-.01-1.35-.26-2.01-.48-.81-.27-1.46-.42-1.4-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.89 8.01-3.46 3.82-1.6 4.62-1.88 5.14-1.89.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.19-.04.28z"/>
+                </svg>
+            </span>
+            <div class="quick-item-text">
+                <strong>Telegram orqali yozish</strong>
+                <span>@Musoev575 (Bijanbek)</span>
+            </div>
+        </a>
+        <a href="https://t.me/suxpedagogikatexnikumi" target="_blank" rel="noopener noreferrer" class="quick-contact-item channel">
+            <span class="quick-item-icon">📢</span>
+            <div class="quick-item-text">
+                <strong>Rasmiy Telegram kanal</strong>
+                <span>Yangiliklar va e'lonlar</span>
+            </div>
+        </a>
+        <a href="tel:+998997891060" class="quick-contact-item phone">
+            <span class="quick-item-icon">📞</span>
+            <div class="quick-item-text">
+                <strong>Telefon qo'ng'irog'i</strong>
+                <span>+998 99 789 10 60</span>
+            </div>
+        </a>
+        <a href="pages/register.html" class="quick-contact-item register">
+            <span class="quick-item-icon">📝</span>
+            <div class="quick-item-text">
+                <strong>Onlayn ariza topshirish</strong>
+                <span>2026-2027 qabul</span>
+            </div>
+        </a>
+    </div>
+
+    <button type="button" class="quick-contact-btn" id="quickContactBtn" aria-label="Tezkor aloqa oynasi" title="Biz bilan bog'laning">
+        <span class="pulse-ring"></span>
+        <span class="quick-btn-icon open-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+        </span>
+        <span class="quick-btn-icon close-icon">✕</span>
+    </button>
+</div>
+
+<!-- BACK TO TOP -->
+<button type="button"
+        class="back-to-top"
+        id="backToTop"
+        aria-label="Yuqoriga qaytish">
+    ↑
+</button>
+
+<!-- Telegram & Arizalar moduli -->
+<script src="js/telegram-config.js"></script>
+
+<!-- Mavjud funksiyalar -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuButton = document.getElementById("menuButton");
+    const navigation = document.getElementById("mainNavigation");
+
+    if (menuButton && navigation) {
+        menuButton.addEventListener("click", function () {
+            const opened = navigation.classList.toggle("show");
+            menuButton.setAttribute("aria-expanded", opened ? "true" : "false");
+        });
+
+        navigation.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navigation.classList.remove("show");
+                menuButton.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
+
+    const searchButton = document.getElementById("searchButton");
+    const searchBox = document.getElementById("searchBox");
+    const searchInput = document.getElementById("siteSearch");
+    const noResults = document.getElementById("noResults");
+
+    if (searchButton && searchBox && searchInput) {
+        searchButton.addEventListener("click", function () {
+            searchBox.classList.toggle("show");
+
+            if (searchBox.classList.contains("show")) {
+                searchInput.focus();
+            }
+        });
+
+        searchInput.addEventListener("input", function () {
+            const query = searchInput.value.trim().toLowerCase();
+            const cards = document.querySelectorAll(
+                ".education-card, .news-card, .gallery-item"
+            );
+
+            let visible = 0;
+
+            cards.forEach(function (card) {
+                const text = card.textContent.toLowerCase();
+                const matched = !query || text.includes(query);
+
+                card.style.display = matched ? "" : "none";
+
+                if (matched) visible++;
+            });
+
+            if (noResults) {
+                noResults.style.display =
+                    query && visible === 0 ? "block" : "none";
+            }
+        });
+    }
+
+    const themeButton = document.getElementById("themeButton");
+    const themeButtonText = document.getElementById("themeButtonText");
+
+    function updateThemeUI(isDark) {
+        if (themeButtonText) {
+            themeButtonText.textContent = isDark ? "Kunduzgi" : "Tungi";
+        }
+        if (themeButton) {
+            themeButton.setAttribute(
+                "aria-label",
+                isDark ? "Kunduzgi rejimga o'tish" : "Tungi rejimga o'tish"
+            );
+            themeButton.title = isDark ? "Kunduzgi rejimga o'tish" : "Tungi rejimga o'tish";
+        }
+    }
+
+    if (themeButton) {
+        const isDark = localStorage.getItem("site-theme") === "dark";
+        if (isDark) {
+            document.body.classList.add("dark-mode");
+        }
+        updateThemeUI(isDark);
+
+        themeButton.addEventListener("click", function () {
+            const activeDark = document.body.classList.toggle("dark-mode");
+            document.documentElement.classList.toggle("dark-mode", activeDark);
+            localStorage.setItem("site-theme", activeDark ? "dark" : "light");
+            updateThemeUI(activeDark);
+        });
+    }
+
+    const counters = document.querySelectorAll("[data-counter]");
+
+    if ("IntersectionObserver" in window) {
+        const counterObserver = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+
+                const counter = entry.target;
+                const target = Number(counter.dataset.counter);
+                let current = 0;
+                const step = Math.max(1, Math.ceil(target / 60));
+
+                const timer = setInterval(function () {
+                    current += step;
+
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+
+                    counter.textContent = current + "+";
+                }, 25);
+
+                observer.unobserve(counter);
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(function (counter) {
+            counterObserver.observe(counter);
+        });
+    }
+
+    const lightbox = document.getElementById("galleryLightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    document.querySelectorAll(".gallery-item img").forEach(function (image) {
+        image.addEventListener("click", function () {
+            if (!lightbox || !lightboxImage) return;
+
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+            lightbox.classList.add("show");
+            document.body.style.overflow = "hidden";
+        });
+    });
+
+    function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove("show");
+        document.body.style.overflow = "";
+    }
+
+    if (lightboxClose) {
+        lightboxClose.addEventListener("click", closeLightbox);
+    }
+
+    if (lightbox) {
+        lightbox.addEventListener("click", function (event) {
+            if (event.target === lightbox) closeLightbox();
+        });
+    }
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" &&
+            lightbox &&
+            lightbox.classList.contains("show")) {
+            closeLightbox();
+        }
+    });
+
+    const backToTop = document.getElementById("backToTop");
+
+    if (backToTop) {
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 500) {
+                backToTop.classList.add("show");
+            } else {
+                backToTop.classList.remove("show");
+            }
+        });
+
+        backToTop.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    }
+
+    const contactForm = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const email = document.getElementById("email") ? document.getElementById("email").value.trim() : "";
+            const subject = document.getElementById("subject") ? document.getElementById("subject").value.trim() : "Bosh sahifadan murojaat";
+            const message = document.getElementById("message").value.trim();
+
+            if (!name || !phone || !message) {
+                if (formMessage) {
+                    formMessage.style.color = "#ef4444";
+                    formMessage.textContent = "Iltimos, ism, telefon va xabar maydonlarini to'ldiring.";
+                }
+                return;
+            }
+
+            const appData = {
+                type: "Bosh sahifa murojaati",
+                fullName: name,
+                phone: phone,
+                email: email,
+                direction: subject,
+                message: message
+            };
+
+            if (typeof saveApplication === "function") {
+                saveApplication(appData);
+            }
+
+            const tgText = `📩 <b>YANGI XABAR (BOSH SAHIFA) | 1-SON TEXNIKUMI</b>\n\n` +
+                           `👤 <b>Kimdan:</b> ${name}\n` +
+                           `📱 <b>Telefon:</b> ${phone}\n` +
+                           (email ? `✉️ <b>Email:</b> ${email}\n` : "") +
+                           `📌 <b>Mavzu:</b> ${subject}\n` +
+                           `💬 <b>Xabar:</b> ${message}\n` +
+                           `⏰ <b>Vaqt:</b> ${new Date().toLocaleString("uz-UZ")}`;
+
+            if (typeof sendTelegramNotification === "function") {
+                await sendTelegramNotification(tgText);
+            }
+
+            if (formMessage) {
+                formMessage.style.color = "#16a34a";
+                formMessage.textContent = "Xabaringiz muvaffaqiyatli yuborildi! Tez orada siz bilan bog'lanamiz.";
+            }
+
+            contactForm.reset();
+        });
+    }
+
+    // =========================================================
+    // HERO IMAGE SLIDER
+    // =========================================================
+    const heroSlides = document.querySelectorAll(".hero-slide");
+    const sliderDots = document.querySelectorAll(".slider-dot");
+    const prevBtn = document.getElementById("sliderPrevBtn");
+    const nextBtn = document.getElementById("sliderNextBtn");
+    const sliderCard = document.getElementById("heroSliderCard");
+
+    if (heroSlides.length > 0) {
+        let currentSlide = 0;
+        let sliderTimer = null;
+
+        function showSlide(index) {
+            if (index < 0) index = heroSlides.length - 1;
+            if (index >= heroSlides.length) index = 0;
+            currentSlide = index;
+
+            heroSlides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === currentSlide);
+            });
+
+            sliderDots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function startAutoplay() {
+            stopAutoplay();
+            sliderTimer = setInterval(nextSlide, 4500);
+        }
+
+        function stopAutoplay() {
+            if (sliderTimer) clearInterval(sliderTimer);
+        }
+
+        if (nextBtn) nextBtn.addEventListener("click", () => { nextSlide(); startAutoplay(); });
+        if (prevBtn) prevBtn.addEventListener("click", () => { prevSlide(); startAutoplay(); });
+
+        sliderDots.forEach((dot, i) => {
+            dot.addEventListener("click", () => {
+                showSlide(i);
+                startAutoplay();
+            });
+        });
+
+        if (sliderCard) {
+            sliderCard.addEventListener("mouseenter", stopAutoplay);
+            sliderCard.addEventListener("mouseleave", startAutoplay);
+        }
+
+        startAutoplay();
+    }
+
+    // =========================================================
+    // FLOATING QUICK CONTACT WIDGET
+    // =========================================================
+    const quickContactBtn = document.getElementById("quickContactBtn");
+    const quickContactWidget = document.getElementById("quickContactWidget");
+
+    if (quickContactBtn && quickContactWidget) {
+        quickContactBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            quickContactWidget.classList.toggle("active");
+        });
+
+        document.addEventListener("click", function (e) {
+            if (!quickContactWidget.contains(e.target)) {
+                quickContactWidget.classList.remove("active");
+            }
+        });
+    }
+
+    const currentYear = document.getElementById("currentYear");
+
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/content.js"></script>
+<script>
+    loadNews({ gridSelector: "#homeNewsGrid", limit: 3, pathPrefix: "" });
+    loadCourses({ gridSelector: "#homeCourseGrid", limit: 6, pathPrefix: "", withNumber: true });
+</script>
+
+</body>
+</html>

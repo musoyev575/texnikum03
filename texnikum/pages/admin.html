@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin panel | 1-son Texnikumi</title>
+    <link rel="icon" type="image/png" href="../assets/image/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+
+<!-- LOGIN EKRANI -->
+<main class="login-page" id="loginScreen">
+    <section class="login-card" aria-labelledby="loginTitle">
+        <img class="login-logo" src="../assets/image/logo.png" alt="1-son Texnikumi">
+
+        <h1 id="loginTitle">Admin panel</h1>
+        <p class="login-subtitle">Texnikum boshqaruv tizimi</p>
+
+        <form id="adminLoginForm" novalidate>
+            <div class="login-form-group">
+                <label for="adminEmail">Admin Email</label>
+                <input type="text" id="adminEmail" name="email" autocomplete="username" placeholder="admin@example.com" required>
+            </div>
+
+            <div class="login-form-group">
+                <label for="adminPassword">Parol</label>
+                <input type="password" id="adminPassword" name="password" autocomplete="current-password" placeholder="Parolingiz" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary login-submit" id="adminLoginSubmit">
+                Kirish
+            </button>
+
+            <p id="adminLoginMessage" class="login-message" role="status" aria-live="polite"></p>
+        </form>
+
+        <div style="margin-top: 18px; padding: 12px; background: rgba(21, 94, 239, 0.08); border-radius: 10px; font-size: 12px; color: var(--muted); text-align: left; line-height: 1.5;">
+            <strong>Xavfsiz kirish:</strong><br>
+            Admin akkaunti Supabase Auth orqali tekshiriladi. Rol (Super Admin yoki Moderator) serverdagi <code>admin_roles</code> jadvalidan olinadi.
+        </div>
+
+        <a href="../index.html" class="login-back" style="margin-top: 16px;">← Bosh sahifaga qaytish</a>
+    </section>
+</main>
+
+<!-- ADMIN DASHBOARD -->
+<div class="admin-page" id="dashboardScreen" style="display:none;">
+
+    <div class="admin-header">
+        <div>
+            <h1>Admin panel — 1-son Texnikumi</h1>
+            <span class="role-badge" id="adminRoleBadge">Super Admin</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:14px;">
+            <span class="admin-user" id="adminUserEmail"></span>
+            <button class="admin-logout" id="logoutBtn">Chiqish</button>
+        </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="admin-tabs" id="adminTabsNav">
+        <button class="admin-tab active" data-tab="newsTab" id="tabNews">Yangiliklar</button>
+        <button class="admin-tab" data-tab="coursesTab" id="tabCourses">Ta'lim yo'nalishlari</button>
+        <button class="admin-tab" data-tab="galleryTab" id="tabGallery">Rasmlar / Galereya</button>
+        <button class="admin-tab" data-tab="applicationsTab" id="tabApplications">Arizalar & Xabarlar</button>
+    </div>
+
+    <!-- 1. YANGILIKLAR PANELI (Super Admin uchun) -->
+    <section class="admin-panel active" id="newsTab">
+        <div class="admin-card">
+            <h2 id="newsFormTitle">Yangi yangilik qo'shish</h2>
+            <form id="newsForm">
+                <input type="hidden" id="newsId">
+
+                <div class="admin-form-row">
+                    <div class="admin-field">
+                        <label for="newsTitle">Sarlavha</label>
+                        <input type="text" id="newsTitle" required>
+                    </div>
+                    <div class="admin-field">
+                        <label for="newsCategory">Kategoriya</label>
+                        <input type="text" id="newsCategory" placeholder="Masalan: TADBIR">
+                    </div>
+                </div>
+
+                <div class="admin-form-row">
+                    <div class="admin-field">
+                        <label for="newsDate">Sana</label>
+                        <input type="date" id="newsDate">
+                    </div>
+                    <div class="admin-field">
+                        <label for="newsImage">Rasm</label>
+                        <input type="file" id="newsImage" accept="image/*">
+                        <img id="newsImagePreview" class="admin-preview" alt="">
+                    </div>
+                </div>
+
+                <div class="admin-form-row">
+                    <div class="admin-field full">
+                        <label for="newsDescription">Qisqacha matn</label>
+                        <textarea id="newsDescription"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="admin-submit" id="newsSubmitBtn">Qo'shish</button>
+                <button type="button" class="admin-cancel-edit" id="newsCancelBtn" style="display:none;">Bekor qilish</button>
+
+                <p id="newsFormMessage" class="admin-message"></p>
+            </form>
+        </div>
+
+        <div class="admin-card">
+            <h2>Mavjud yangiliklar</h2>
+            <div class="admin-list" id="newsList">
+                <p class="admin-empty">Yuklanmoqda...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. TA'LIM YO'NALISHLARI PANELI (Hamma uchun) -->
+    <section class="admin-panel" id="coursesTab">
+        <div class="admin-card">
+            <h2 id="courseFormTitle">Yangi yo'nalish qo'shish</h2>
+            <form id="courseForm">
+                <input type="hidden" id="courseId">
+
+                <div class="admin-form-row">
+                    <div class="admin-field">
+                        <label for="courseTitle">Nomi</label>
+                        <input type="text" id="courseTitle" required>
+                    </div>
+                    <div class="admin-field">
+                        <label for="courseIcon">Belgi (2 harf yoki emoji)</label>
+                        <input type="text" id="courseIcon" placeholder="Masalan: IT yoki 💻">
+                    </div>
+                </div>
+
+                <div class="admin-form-row">
+                    <div class="admin-field full">
+                        <label for="courseDescription">Tavsif</label>
+                        <textarea id="courseDescription"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="admin-submit" id="courseSubmitBtn">Qo'shish</button>
+                <button type="button" class="admin-cancel-edit" id="courseCancelBtn" style="display:none;">Bekor qilish</button>
+
+                <p id="courseFormMessage" class="admin-message"></p>
+            </form>
+        </div>
+
+        <div class="admin-card">
+            <h2>Mavjud yo'nalishlar</h2>
+            <div class="admin-list" id="courseList">
+                <p class="admin-empty">Yuklanmoqda...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. RASMLAR / GALEREYA PANELI (Hamma uchun) -->
+    <section class="admin-panel" id="galleryTab">
+        <div class="admin-card">
+            <h2>Galereyaga yangi rasm qo'shish</h2>
+            <form id="galleryForm">
+                <div class="admin-form-row">
+                    <div class="admin-field">
+                        <label for="galleryTitle">Rasm nomi / tavsifi</label>
+                        <input type="text" id="galleryTitle" placeholder="Masalan: Texnikum tadbiri" required>
+                    </div>
+                    <div class="admin-field">
+                        <label for="galleryFile">Rasm tanlang</label>
+                        <input type="file" id="galleryFile" accept="image/*" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="admin-submit" id="gallerySubmitBtn">Rasmni yuklash</button>
+                <p id="galleryFormMessage" class="admin-message"></p>
+            </form>
+        </div>
+
+        <div class="admin-card">
+            <h2>Mavjud galereya rasmlari</h2>
+            <div class="admin-gallery-grid" id="adminGalleryList">
+                <!-- Rasmlar ro'yxati -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ARIZALAR VA XABARLAR PANELI (Super Admin uchun) -->
+    <section class="admin-panel" id="applicationsTab">
+        <div class="admin-card">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
+                <h2 style="margin:0;">Kelib tushgan arizalar va murojaatlar</h2>
+                <button type="button" class="admin-logout" id="clearAppsBtn" style="font-size:12px;">Barcha arizalarni tozalash</button>
+            </div>
+            
+            <div class="admin-table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Turi</th>
+                            <th>F.I.Sh / Ism</th>
+                            <th>Telefon</th>
+                            <th>Yo'nalish / Mavzu</th>
+                            <th>Sana</th>
+                            <th>Holat</th>
+                            <th>Amallar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="applicationsTableBody">
+                        <tr>
+                            <td colspan="8" class="admin-empty">Arizalar mavjud emas.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TELEGRAM BOT SOZLAMALARI (Super Admin) -->
+        <div class="admin-card" style="margin-top: 24px;">
+            <h2>🤖 Telegram Bot xabarnomalari sozlamasi</h2>
+            <p style="font-size: 13px; color: var(--muted); margin-bottom: 16px;">
+                Saytdan yangi ariza yoki xabar yuborilganda sizning Telegramingizga zudlik bilan bildirishnoma kelishi uchun bot ma'lumotlarini kiriting.
+            </p>
+            <form id="tgSettingsForm">
+                <div class="admin-form-row">
+                    <div class="admin-field">
+                        <label for="tgBotToken">Telegram Bot Token (BotFather'dan olingan)</label>
+                        <input type="text" id="tgBotToken" placeholder="Masalan: 1234567890:AAH...">
+                    </div>
+                    <div class="admin-field">
+                        <label for="tgChatId">Telegram Chat ID (Shaxsiy ID yoki Kanal/Guruh ID)</label>
+                        <input type="text" id="tgChatId" placeholder="Masalan: 575123456 yoki -100...">
+                    </div>
+                </div>
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <button type="submit" class="admin-submit">Sozlamalarni saqlash</button>
+                    <button type="button" class="admin-logout" id="tgTestBtn" style="border-color: #38bdf8; color: #0284c7;">🔔 Test xabar yuborish</button>
+                </div>
+                <p id="tgSettingsMessage" class="admin-message"></p>
+            </form>
+        </div>
+    </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="../js/supabase-config.js"></script>
+<script src="../js/telegram-config.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ro‘yxatdan o‘tish | 1-son Texnikumi</title>
+    <link rel="icon" type="image/png" href="../assets/image/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body>
+
+    <main class="register-page">
+        <!-- Background -->
+        <div class="register-grid"></div>
+        <div class="register-circle register-circle-one"></div>
+        <div class="register-circle register-circle-two"></div>
+
+        <div class="register-container">
+            <!-- LEFT INFO -->
+            <section class="register-info">
+                <a href="../index.html" class="register-logo" aria-label="1-son Texnikumi bosh sahifa">
+                    <img src="../assets/image/logo.png" alt="1-son Texnikumi logotipi" width="52" height="52">
+                    <div class="register-logo-text">
+                        <strong>1-SON TEXNIKUMI</strong>
+                        <span>ZAMONAVIY TA'LIM</span>
+                    </div>
+                </a>
+
+                <div class="info-content">
+                    <div class="register-badge">
+                        <span></span>
+                        Qabul jarayoni davom etmoqda
+                    </div>
+
+                    <h1>
+                        Kelajagingizni
+                        <span>biz bilan boshlang.</span>
+                    </h1>
+
+                    <p>
+                        1-son Texnikumiga onlayn ariza topshiring va zamonaviy kasbiy ta’lim hamda amaliy bilim olish imkoniyatiga ega bo‘ling.
+                    </p>
+
+                    <div class="register-benefits">
+                        <div class="benefit">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <strong>Tezkor ariza yuborish</strong>
+                                <span>Bir necha daqiqada ro'yxatdan o'ting</span>
+                            </div>
+                        </div>
+
+                        <div class="benefit">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <strong>Zamonaviy ta’lim</strong>
+                                <span>Amaliyotga yo'naltirilgan kasbiy bilimlar</span>
+                            </div>
+                        </div>
+
+                        <div class="benefit">
+                            <div class="benefit-icon">✓</div>
+                            <div>
+                                <strong>O'quvchi portali</strong>
+                                <span>Dars jadvali va baholarni onlayn kuzating</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="../index.html" class="back-home">
+                    ← Asosiy sahifaga qaytish
+                </a>
+            </section>
+
+            <!-- REGISTER FORM -->
+            <section class="register-card">
+                <div class="card-header">
+                    <h2>Ro‘yxatdan o‘tish</h2>
+                    <p>Kerakli ma’lumotlarni to‘ldiring</p>
+                </div>
+
+                <form id="registerForm" class="register-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Ismingiz</label>
+                            <div class="input-box">
+                                <span>👤</span>
+                                <input type="text" id="firstName" name="firstName" placeholder="Ism" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Familiyangiz</label>
+                            <div class="input-box">
+                                <span>👤</span>
+                                <input type="text" id="lastName" name="lastName" placeholder="Familiya" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefon raqam</label>
+                        <div class="input-box">
+                            <span>📱</span>
+                            <input type="tel" id="phone" name="phone" placeholder="+998 90 123 45 67" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birthDate">Tug‘ilgan sana</label>
+                        <div class="input-box">
+                            <span>📅</span>
+                            <input type="date" id="birthDate" name="birthDate" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="direction">Ta’lim yo‘nalishi</label>
+                        <div class="input-box select-box">
+                            <span>🎓</span>
+                            <select id="direction" name="direction" required>
+                                <option value="">Yo‘nalishni tanlang</option>
+                                <option value="it">Axborot texnologiyalari</option>
+                                <option value="tikuvchilik">Tikuvchilik</option>
+                                <option value="oshpazlik">Oshpazlik</option>
+                                <option value="agrodrom">Agrodrom operatori</option>
+                                <option value="tarbiyachi">Tarbiyachi</option>
+                                <option value="kutubxona">Kitobxonachi</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Parol</label>
+                        <div class="input-box password-box">
+                            <span>🔒</span>
+                            <input type="password" id="password" name="password" placeholder="Kamida 6 ta belgi" minlength="6" required>
+                            <button type="button" class="password-toggle" id="passwordToggle" aria-label="Parolni ko‘rsatish">
+                                👁
+                            </button>
+                        </div>
+                    </div>
+
+                    <label class="terms">
+                        <input type="checkbox" id="terms" required>
+                        <span>Men barcha ma'lumotlar to'g'riligini tasdiqlayman</span>
+                    </label>
+
+                    <button type="submit" class="register-btn" id="submitBtn">
+                        <span>Arizani yuborish</span>
+                        <span class="arrow">→</span>
+                    </button>
+
+                    <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+                </form>
+
+                <div class="login-link">
+                    Profilingiz bormi?
+                    <a href="login.html">Kirish</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/telegram-config.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const toggleBtn = document.getElementById("passwordToggle");
+        const passwordInput = document.getElementById("password");
+        const form = document.getElementById("registerForm");
+        const messageBox = document.getElementById("formMessage");
+        const submitBtn = document.getElementById("submitBtn");
+
+        if (toggleBtn && passwordInput) {
+            toggleBtn.addEventListener("click", function () {
+                const isPassword = passwordInput.type === "password";
+                passwordInput.type = isPassword ? "text" : "password";
+                toggleBtn.textContent = isPassword ? "🙈" : "👁";
+            });
+        }
+
+        if (form) {
+            form.addEventListener("submit", async function (e) {
+                e.preventDefault();
+
+                const firstName = document.getElementById("firstName").value.trim();
+                const lastName = document.getElementById("lastName").value.trim();
+                const phone = document.getElementById("phone").value.trim();
+                const birthDate = document.getElementById("birthDate").value;
+                const directionSelect = document.getElementById("direction");
+                const directionText = directionSelect.options[directionSelect.selectedIndex].text;
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = "Yuborilmoqda...";
+
+                const appData = {
+                    type: "Qabul arizasi",
+                    fullName: `${firstName} ${lastName}`,
+                    phone: phone,
+                    birthDate: birthDate,
+                    direction: directionText
+                };
+
+                // 1. Saqlash
+                saveApplication(appData);
+
+                // 2. Telegramga yuborish
+                const tgText = `🎓 <b>YANGI ARIZA | 1-SON TEXNIKUMI</b>\n\n` +
+                               `👤 <b>F.I.Sh:</b> ${firstName} ${lastName}\n` +
+                               `📱 <b>Telefon:</b> ${phone}\n` +
+                               `📅 <b>Tug'ilgan sana:</b> ${birthDate}\n` +
+                               `📚 <b>Yo'nalish:</b> ${directionText}\n` +
+                               `⏰ <b>Sana:</b> ${new Date().toLocaleString("uz-UZ")}`;
+
+                await sendTelegramNotification(tgText);
+
+                if (messageBox) {
+                    messageBox.className = "form-message success";
+                    messageBox.textContent = "Arizangiz muvaffaqiyatli qabul qilindi! Qabul komissiyasi siz bilan bog'lanadi.";
+                }
+
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<span>Arizani yuborish</span> <span class="arrow">→</span>`;
+            });
+        }
+    });
+    </script>
+</body>
+</html>

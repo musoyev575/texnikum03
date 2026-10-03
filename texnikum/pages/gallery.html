@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galereya | 1-son Texnikumi</title>
+    <link rel="icon" type="image/png" href="../assets/image/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="container navbar">
+        <a href="../index.html" class="logo" aria-label="1-son Texnikumi bosh sahifa">
+            <img src="../assets/image/logo.png" alt="1-son Texnikumi logotipi" width="52" height="52">
+            <div class="logo-text">
+                <strong>1-SON TEXNIKUMI</strong>
+                <span>TEXNIKUM GALEREYASI</span>
+            </div>
+        </a>
+
+        <a href="../index.html" class="student-login">
+            ← Bosh sahifa
+        </a>
+    </div>
+</header>
+
+<main>
+    <section class="section" style="padding-top: 140px;">
+        <div class="container">
+            <div class="section-heading center">
+                <span class="section-label">Foto galereya</span>
+                <h2>Bizning <span>hayotimiz</span></h2>
+                <p>Texnikumimizdagi ta’lim jarayoni, tadbirlar, amaliyot va o‘quvchilar hayotidan fotolavhalar.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item gallery-large">
+                    <img src="../assets/image/texnikum.jpg" alt="1-son Texnikumi binosi" loading="lazy">
+                    <div class="gallery-overlay">Texnikum bosh binosi</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="../assets/image/madaniyat.jpg" alt="O‘quvchilar madaniy tadbirda" loading="lazy">
+                    <div class="gallery-overlay">Iqtidorli o‘quvchilar</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="../assets/image/tikuvchi.jpg" alt="Tikuvchilik amaliyoti" loading="lazy">
+                    <div class="gallery-overlay">Amaliy kasbiy mashg'ulot</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="../assets/image/zal.jpg" alt="Tadbirlar zali" loading="lazy">
+                    <div class="gallery-overlay">Faollar zali</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="../assets/image/zal2.jpg" alt="Texnikum foye va zali" loading="lazy">
+                    <div class="gallery-overlay">Texnikum ichki ko'rinishi</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="../assets/image/texnikumbog.jpg" alt="Texnikum bog'i" loading="lazy">
+                    <div class="gallery-overlay">Texnikum xiyoboni va bog'i</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="../assets/image/yangiuquvyili.jpg" alt="Yangi o'quv yili marosimi" loading="lazy">
+                    <div class="gallery-overlay">Yangi o'quv yili bayrami</div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="../assets/image/hokim bilan uchrashuv.jpg" alt="Hokim bilan uchrashuv" loading="lazy">
+                    <div class="gallery-overlay">Rahbariyat bilan muloqot</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Lightbox Modal -->
+<div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Rasm ko'rish oynasi">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Yopish">×</button>
+    <img id="lightboxImage" src="" alt="">
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <p>© 2026 1-son Texnikumi. Barcha huquqlar himoyalangan.</p>
+            <div>
+                <a href="../index.html">Bosh sahifa</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const lightbox = document.getElementById("galleryLightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    document.querySelectorAll(".gallery-item img").forEach(function (image) {
+        image.addEventListener("click", function () {
+            if (!lightbox || !lightboxImage) return;
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+            lightbox.classList.add("show");
+            document.body.style.overflow = "hidden";
+        });
+    });
+
+    function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove("show");
+        document.body.style.overflow = "";
+    }
+
+    if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+    if (lightbox) {
+        lightbox.addEventListener("click", function (e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+    }
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && lightbox && lightbox.classList.contains("show")) {
+            closeLightbox();
+        }
+    });
+});
+</script>
+</body>
+</html>

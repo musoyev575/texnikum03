@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'quvchi portali | 1-son Texnikumi</title>
+    <link rel="icon" type="image/png" href="../assets/image/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="portal-body">
+
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <img src="../assets/image/logo.png" alt="1-son Texnikumi" width="52" height="52">
+                <div class="logo-text">
+                    <strong>1-SON TEXNIKUMI</strong>
+                    <span>ZAMONAVIY TA'LIM</span>
+                </div>
+            </a>
+            <div class="header-actions">
+                <a href="../index.html" class="student-login">Bosh sahifa</a>
+                <button id="logoutButton" class="login-button" type="button">Chiqish</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="portal-page">
+    <div class="container">
+        <section class="portal-welcome">
+            <div class="portal-welcome-text">
+                <div class="section-label">O'QUVCHI PORTALI</div>
+                <h1>Xush kelibsiz, <span id="studentName">O'quvchi</span>!</h1>
+                <p id="studentInfo">Ma'lumotlar yuklanmoqda...</p>
+            </div>
+            <div class="portal-avatar" id="studentAvatar">O</div>
+        </section>
+
+        <div id="portalMessage" class="portal-message"></div>
+
+        <section class="portal-cards">
+            <article class="portal-card profile-card">
+                <div class="portal-card-head">
+                    <div>
+                        <span class="portal-card-label">SHAXSIY MA'LUMOT</span>
+                        <h2>Profil</h2>
+                    </div>
+                </div>
+                <div class="profile-list">
+                    <div><span>F.I.Sh.</span><strong id="profileName">—</strong></div>
+                    <div><span>Login</span><strong id="profileLogin">—</strong></div>
+                    <div><span>Guruh</span><strong id="profileGroup">—</strong></div>
+                </div>
+            </article>
+
+            <article class="portal-card schedule-card">
+                <div class="portal-card-head schedule-head">
+                    <div>
+                        <span class="portal-card-label">2026–2027 · I SEMESTR · I SMENA</span>
+                        <h2>Haftalik dars jadvali</h2>
+                    </div>
+                    <span class="schedule-badge">252-GURUH</span>
+                </div>
+                <div id="scheduleContainer" class="schedule-container">
+                    <div class="schedule-loading">Dars jadvali yuklanmoqda...</div>
+                </div>
+            </article>
+
+            <article class="portal-card grades-card">
+                <div class="portal-card-head">
+                    <div>
+                        <span class="portal-card-label">O'ZLASHTIRISH</span>
+                        <h2>Baholar</h2>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table class="portal-table">
+                        <thead>
+                            <tr><th>#</th><th>Fan</th><th>Baho</th><th>Sana</th></tr>
+                        </thead>
+                        <tbody id="gradesBody">
+                            <tr><td colspan="4">Yuklanmoqda...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article class="portal-card attendance-card">
+                <div class="portal-card-head">
+                    <div>
+                        <span class="portal-card-label">NAZORAT</span>
+                        <h2>Davomat</h2>
+                    </div>
+                </div>
+                <div class="attendance-summary" id="attendanceSummary">—</div>
+                <div class="table-wrap">
+                    <table class="portal-table">
+                        <thead><tr><th>Sana</th><th>Holat</th></tr></thead>
+                        <tbody id="attendanceBody">
+                            <tr><td colspan="2">Yuklanmoqda...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+
+            <article class="portal-card announcements-card">
+                <div class="portal-card-head">
+                    <div>
+                        <span class="portal-card-label">MUHIM XABARLAR</span>
+                        <h2>E'lonlar</h2>
+                    </div>
+                </div>
+                <div id="announcementsList" class="announcements-list">Yuklanmoqda...</div>
+            </article>
+        </section>
+    </div>...................................
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <p>© <span id="currentYear">2026</span> 1-son Texnikumi. Barcha huquqlar himoyalangan.</p>
+            <a href="../index.html">Bosh sahifa</a>
+        </div>
+    </div>
+</footer>
+
+<script src="../js/portal.js"></script>
+</body>
+</html>
